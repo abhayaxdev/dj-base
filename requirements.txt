@@ -1,2 +1,22 @@
+# Django
 Django==5.2.10
+
+# DRF
+djangorestframework==3.16.1
+
+# Custom Admin Template
+django-jazzmin==3.0.2
+
+# Postgres
+psycopg2-binary==2.9.11
+
+# CORS
+django-cors-headers==4.9.0
+
+# DEBUG TOOLBAR
+django-debug-toolbar==6.2.0
+
+# Image Processing
+pillow==12.1.1
+
 
