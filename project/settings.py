@@ -91,7 +91,7 @@ USE_SQLITE = env.bool('USE_SQLITE')
 if USE_SQLITE:
     DATABASES = {
         'default': {
-            'ENGINE': env.str('DB_ENGINE', 'django.db.backends.sqlite3'),
+            'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
@@ -107,6 +107,7 @@ else:
     }
 }
 
+print(DATABASES)
 
 
 # Password validation
