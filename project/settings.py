@@ -98,17 +98,14 @@ if USE_SQLITE:
 else:
     DATABASES = {
     'default': {
-        'ENGINE': env.str('DB_ENGINE', 'django.db.backends.postgresql'),
+        'ENGINE': env.str('DB_ENGINE'),
         'NAME': env.str('DB_NAME'),
         'USER': env.str('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
         'HOST': env.str('DB_HOST'),
-        'PORT': env.int('DB_PORT', 5432),
+        'PORT': env.int('DB_PORT'),
     }
 }
-
-print(DATABASES)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
