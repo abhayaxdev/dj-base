@@ -5,36 +5,39 @@
 ## Quick start
 
 1. Clone the template and `cd` into it.
-2. Set up env variables based on `.env.example`:
-
-   → To use SQLite, set `USE_SQLITE=TRUE`, otherwise configure the database env vars.
-
-3. Run setup:
+2. Run the setup command:
 
    ```bash
-   make install
-   make migrate
+   make setup
    ```
+
+   This installs dependencies, creates `.env` from `.env.example` (if it doesn't exist), and runs migrations.
+
+3. Set up env variables based on `.env.example`:
+
+   → To use SQLite, set `USE_SQLITE=TRUE`, otherwise configure the database env vars.
 
 4. Start the dev server:
 
    ```bash
-   make run
+   python manage.py runserver
    ```
 
 ## Available commands
 
-| Command                | Action                         |
-|------------------------|--------------------------------|
-| `make install`         | Install dependencies           |
-| `make migrate`         | Apply database migrations      |
-| `make makemigrations`  | Create new migrations          |
-| `make run`             | Start development server       |
-| `make collectstatic`   | Collect static files           |
-| `make test`            | Run tests                      |
+| Command                | Action                                  |
+|------------------------|-----------------------------------------|
+| `make setup`           | Run install, create `.env`, and migrate |
+| `make install`         | Install dependencies                    |
+| `make env`             | Create `.env` from `.env.example`       |
+| `make migrate`         | Apply database migrations               |
+| `make makemigrations`  | Create new database migrations          |
+| `make collectstatic`   | Collect static files                    |
+| `make test`            | Run tests                               |
 
 ## Notes
 
 - Ensure you have a `.env` file at project root (see `.env.example`).
 - Adjust `USE_SQLITE` and database-related env vars before running the app.
+- `make env` will skip if `.env` already exists.
 
