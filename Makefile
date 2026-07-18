@@ -17,7 +17,7 @@ migrate:
 makemigrations:
 	python manage.py makemigrations
 
-setup: install env migrate
+setup: install migrate
 
 collectstatic:
 	python manage.py collectstatic --noinput
