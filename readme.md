@@ -2,22 +2,38 @@
 
 ### A django starter template for any python/django related projects.
 
-Quick start
+## Quick start
 
-1. Install the template:
+1. Clone the template and `cd` into it.
+2. Set up env variables based on `.env.example`:
 
-	pip install -r requirements.txt
+   → To use SQLite, set `USE_SQLITE=TRUE`, otherwise configure the database env vars.
 
-2. Set up these env variables based on .env.example
+3. Run setup:
 
-	-> If you're going to use SQLITE, simply set ```USE_SQLITE=TRUE``` or else configure the 
-    Database env vars
+   ```bash
+   make install
+   make migrate
+   ```
 
-3. Run Migrations
+4. Start the dev server:
 
-	python manage.py migrate
+   ```bash
+   make run
+   ```
 
-Notes
+## Available commands
+
+| Command                | Action                         |
+|------------------------|--------------------------------|
+| `make install`         | Install dependencies           |
+| `make migrate`         | Apply database migrations      |
+| `make makemigrations`  | Create new migrations          |
+| `make run`             | Start development server       |
+| `make collectstatic`   | Collect static files           |
+| `make test`            | Run tests                      |
+
+## Notes
 
 - Ensure you have a `.env` file at project root (see `.env.example`).
 - Adjust `USE_SQLITE` and database-related env vars before running the app.
